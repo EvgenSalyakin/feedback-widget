@@ -1,5 +1,5 @@
 import { Section } from 'components';
-import Styles from './Statistics.module.css';
+//import Styles from './Statistics.module.css';
 
 export const Statistics = ({
   good,

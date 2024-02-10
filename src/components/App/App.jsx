@@ -1,4 +1,10 @@
-import { Heading, FeedbackOptions, Statistics, Notification } from 'components';
+import {
+  Container,
+  Heading,
+  FeedbackOptions,
+  Statistics,
+  Notification,
+} from 'components';
 import { Component } from 'react';
 
 class App extends Component {
@@ -29,21 +35,23 @@ class App extends Component {
     return (
       <>
         <Heading />
-        <FeedbackOptions
-          options={Object.getOwnPropertyNames(this.state)}
-          onLeaveFeedback={this.handleClick}
-        />
-        {total !== 0 ? (
-          <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
-            total={total}
-            positivePercentage={this.countPositiveFeedbackPercentage()}
+        <Container>
+          <FeedbackOptions
+            options={Object.getOwnPropertyNames(this.state)}
+            onLeaveFeedback={this.handleClick}
           />
-        ) : (
-          <Notification message="There is no feedback" />
-        )}
+          {total !== 0 ? (
+            <Statistics
+              good={this.state.good}
+              neutral={this.state.neutral}
+              bad={this.state.bad}
+              total={total}
+              positivePercentage={this.countPositiveFeedbackPercentage()}
+            />
+          ) : (
+            <Notification message="There is no feedback" />
+          )}
+        </Container>
       </>
     );
   }

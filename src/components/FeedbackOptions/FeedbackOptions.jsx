@@ -1,21 +1,22 @@
-import Styles from './FeedbackOptions.module.css';
+// export const FeedbackOptions = ({ children, ...props }) => {
+//   return <ButtonsPanel {...props}>{children}</ButtonsPanel>;
+// };
+
+import { FeedbackOptionsItem } from 'components';
+import { ButtonsPanel } from './FeedbackOptions.module';
 
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
-    <div className={Styles.buttons}>
+    <ButtonsPanel>
       {options.map(key => {
         return (
-          <button
-            className={Styles.btn}
+          <FeedbackOptionsItem
             key={key}
-            onClick={() => {
-              onLeaveFeedback(key);
-            }}
-          >
-            {key}
-          </button>
+            option={key}
+            onLeaveFeedback={onLeaveFeedback}
+          />
         );
       })}
-    </div>
+    </ButtonsPanel>
   );
 };
