@@ -1,17 +1,21 @@
 import { BsEmojiSmile, BsEmojiNeutral, BsEmojiFrown } from 'react-icons/bs';
 import { IconContext } from 'react-icons';
+import style from './FeedbackOptionsItem.module.css';
 
 //const icons = [<BsEmojiSmile />, <BsEmojiNeutral />, <BsEmojiFrown />];
 
 export const FeedbackOptionsItem = ({ option, onLeaveFeedback }) => {
   return (
-    <button
-      className="btn"
+    <a
+      className={style.btn}
       onClick={() => {
         onLeaveFeedback(option);
       }}
     >
-      <IconContext.Provider value={{ color: 'palevioletred', size: '24px' }}>
+      <IconContext.Provider
+        className="icon"
+        value={{ color: 'palevioletred', size: '24px' }}
+      >
         {option === 'good' ? (
           <BsEmojiSmile />
         ) : option === 'bad' ? (
@@ -21,6 +25,6 @@ export const FeedbackOptionsItem = ({ option, onLeaveFeedback }) => {
         )}
       </IconContext.Provider>
       {option}
-    </button>
+    </a>
   );
 };

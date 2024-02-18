@@ -1,5 +1,5 @@
-import Styles from './FeedbackOptions.module.css';
+import styles from './FeedbackOptions.module.css';
 
 export const ButtonsPanel = ({ children }) => {
-  return <div className={Styles.div}>{children}</div>;
+  return <div className={styles.div}>{children}</div>;
 };

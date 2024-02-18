@@ -1,5 +1,5 @@
 import { Section } from 'components';
-//import Styles from './Statistics.module.css';
+import style from './Statistics.module.css';
 
 export const Statistics = ({
   good,
@@ -9,12 +9,12 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <>
+    <div className={style.wraper}>
       <Section title="Good">{good}</Section>
       <Section title="Neutral">{neutral}</Section>
       <Section title="Bad">{bad}</Section>
       <Section title="Total">{total}</Section>
       <Section title="Positive feedback">{positivePercentage}</Section>
-    </>
+    </div>
   );
 };

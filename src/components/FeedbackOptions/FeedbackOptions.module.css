@@ -1,4 +1,8 @@
 .div {
-     padding-top: 80;
-    padding-bottom: 80;
-  }
+  line-height: 2.5;
+  padding: 10px;
+  margin: 10px;
+  text-decoration-color: aliceblue;
+  text-shadow: #f1f7f6b0;
+  text-decoration-style: bold;
+}

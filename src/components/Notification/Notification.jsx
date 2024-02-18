@@ -1,3 +1,5 @@
+import style from './Notification.css';
+
 export const Notification = ({ message }) => {
-  return <p>{message}</p>;
+  return <p className={style.p}>{message}</p>;
 };
